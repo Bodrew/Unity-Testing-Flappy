@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PipeDestroyerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         
     }
@@ -13,6 +13,11 @@ public class PipeDestroyerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(collision.gameObject.transform.parent.gameObject);
+		Debug.Log("Pipes destroyed.");
+	}
 }
